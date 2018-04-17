@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head/>
+<h:body>
+    <h2>Furniture:</h2>
+    <ol>
+        <ui:repeat value="#{furnitures.furniture}" var="f">
+            <li>#{f.type} #{f.material} #{f.price}</li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText value="#{furnitures.newFurniture.type}" placeholder="type" required="true" />
+        <h:inputText value="#{furnitures.newFurniture.material}" placeholder="material" required="true" />
+        <h:inputText value="#{furnitures.newFurniture.price}" placeholder="price" required="true" />
+        <h:commandButton value="Add new author" action="#{furnitures.createNewFurniture}" />
+    </h:form>
+</h:body>
+</html>
