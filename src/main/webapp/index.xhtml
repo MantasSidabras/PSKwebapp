@@ -6,17 +6,19 @@
 >
 <h:head/>
 <h:body>
-    <h2>Furniture:</h2>
+    <h2>Authors:</h2>
     <ol>
-        <ui:repeat value="#{furnitures.furniture}" var="f">
-            <li>#{f.type} #{f.material} #{f.price}</li>
+        <ui:repeat value="#{authors.allAuthors}" var="author">
+            <li><h:link value="#{author.name}" outcome="books?authorId=#{author.id}" /></li>
         </ui:repeat>
     </ol>
     <h:form>
-        <h:inputText value="#{furnitures.newFurniture.type}" placeholder="type" required="true" />
-        <h:inputText value="#{furnitures.newFurniture.material}" placeholder="material" required="true" />
-        <h:inputText value="#{furnitures.newFurniture.price}" placeholder="price" required="true" />
-        <h:commandButton value="Add new author" action="#{furnitures.createNewFurniture}" />
+        <h:inputText value="#{authors.newAuthor.name}" required="true" />
+        <h:commandButton
+                value="Add new author"
+                action="#{authors.createNewAuthor}"
+        />
     </h:form>
+    <h:link outcome="mybatis/authors" value="MyBatis implementation"/>
 </h:body>
 </html>

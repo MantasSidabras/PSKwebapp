@@ -8,6 +8,9 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.h2database:h2:1.4.195" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.16.16" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.4" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-cdi:1.0.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
