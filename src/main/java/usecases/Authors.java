@@ -14,7 +14,7 @@ public class Authors {
     @Inject
     private AuthorsDAO authorsDAO;
     private List<Author> allAuthors;
-    //Default initial values could be set here or inside the Author model - which is better?
+
     private Author newAuthor = new Author();
 
     @PostConstruct

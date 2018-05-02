@@ -15,4 +15,8 @@ public class BooksDAO {
     public void save(Book book) {
         this.em.persist(book);
     }
+
+    public Book findByIsbn(String isbn){
+        return this.em.find(Book.class, isbn);
+    }
 }

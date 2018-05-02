@@ -2,7 +2,7 @@ package entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name = "BOOK")
@@ -19,6 +19,21 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "AUTHOR_ID")
     private Author author;
+
+    @ManyToMany
+    @JoinTable(name="BOOK_READER", joinColumns = {
+            @JoinColumn(name = "BOOK_ISBN", referencedColumnName = "ISBN")},
+            inverseJoinColumns = {
+            @JoinColumn(name="READER_ID", referencedColumnName = "ID")})
+    private List<Reader> readers = new ArrayList<>();
+
+    public List<Reader> getReaders() {
+        return readers;
+    }
+
+    public void setReaders(List<Reader> readers) {
+        this.readers = readers;
+    }
 
     @Override
     public boolean equals(Object o) {

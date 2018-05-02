@@ -20,5 +20,19 @@
         />
     </h:form>
     <h:link outcome="mybatis/authors" value="MyBatis implementation"/>
+    <h2>Readers:</h2>
+    <ol>
+        <ui:repeat value="#{readers.allReaders}" var="reader">
+            <li><h:link value="#{reader.name}" outcome="reader?readerId=#{reader.id}" /></li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText value="#{readers.newReader.name}" required="true" />
+        <h:commandButton
+                value="Add new reader"
+                action="#{readers.createNewReader}"
+        />
+    </h:form>
+
 </h:body>
 </html>
