@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="ikea:war exploded">
-    <output-path>$PROJECT_DIR$/../ikea/target/ikea</output-path>
+    <output-path>$PROJECT_DIR$/target/ikea</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -11,10 +11,12 @@
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.16.16" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.4" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-cdi:1.0.0" />
+          <element id="library" level="project" name="Maven: org.apache.deltaspike.core:deltaspike-core-api:1.7.2" />
+          <element id="library" level="project" name="Maven: org.apache.deltaspike.core:deltaspike-core-impl:1.7.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/../ikea/target/ikea/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/ikea/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="ikea/web/Web" />
     </root>

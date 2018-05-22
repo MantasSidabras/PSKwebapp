@@ -35,8 +35,11 @@ public class ReaderBooks {
 
     @Transactional
     public String borrowBook(String isbn) {
-        reader.getBooks().add(booksDAO.findByIsbn(isbn));
-        readerDAO.save(reader);
+//        reader.getBooks().add(booksDAO.findByIsbn(isbn));
+        Book b = booksDAO.findByIsbn(isbn);
+        b.getReaders().add(this.reader);
+//        readerDAO.save(reader);
+        booksDAO.save(b);
         return "reader?faces-redirect=true&readerId=" + this.reader.getId();
     }
 

@@ -28,6 +28,11 @@ public class Authors {
         return "index?faces-redirect=true";
     }
 
+    @Transactional
+    public void createNewAuthor(Author author) {
+        authorsDAO.save(author);
+    }
+
     private void loadAuthors() {
         this.allAuthors = authorsDAO.loadAll();
     }

@@ -18,7 +18,7 @@
         <h:form>
         <h:inputText a:placeholder="isbn" value="#{readerBooks.isbnToAdd}" required="true">
         </h:inputText>
-            <h:commandButton value="borrow book" action="#{readerBooks.borrowBook}">
+            <h:commandButton value="borrow book" action="#{readerBooks.borrowBook(readerBooks.isbnToAdd)}">
                 <f:param name="readerId" value="#{readerBooks.reader.id}" />
             </h:commandButton>
         </h:form>
