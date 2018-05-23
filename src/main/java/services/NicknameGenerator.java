@@ -1,14 +1,20 @@
 package services;
 
 import org.apache.deltaspike.core.api.future.Futureable;
+import servicesInterfaces.NicknameGeneratorInterface;
+import servicesInterfaces.SimpleGenerator;
 
 import javax.ejb.AsyncResult;
+import javax.ejb.Asynchronous;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Default;
 import java.io.Serializable;
 import java.util.concurrent.Future;
 
+@Default
+@SimpleGenerator
 @ApplicationScoped
-public class NicknameGenerator implements Serializable {
+public class NicknameGenerator implements Serializable, NicknameGeneratorInterface {
     private static int count = 0;
 
     @Futureable

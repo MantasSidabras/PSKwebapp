@@ -10,7 +10,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 import javax.persistence.SynchronizationType;
 
-@RequestScoped
+@ApplicationScoped
 public class Resources {
 
     @PersistenceUnit(name="IkeaPU")

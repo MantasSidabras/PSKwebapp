@@ -9,4 +9,13 @@
     <interceptors>
         <class>interceptors.MethodLogger</class>
     </interceptors>
+
+    <alternatives>
+        <class>services.MockNicknameGenerator</class>
+        <!--<class>services.RandomNicknameGenerator</class>-->
+    </alternatives>
+
+    <decorators>
+        <class>decorators.NicknameDecorator</class>
+    </decorators>
 </beans>

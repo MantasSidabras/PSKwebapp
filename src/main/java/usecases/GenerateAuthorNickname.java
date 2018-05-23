@@ -2,6 +2,9 @@ package usecases;
 
 import interceptors.LoggedInvocation;
 import services.NicknameGenerator;
+import servicesInterfaces.NicknameGeneratorInterface;
+import servicesInterfaces.RandomGenerator;
+import servicesInterfaces.SimpleGenerator;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -15,8 +18,8 @@ import java.util.concurrent.Future;
 @SessionScoped
 @Named
 public class GenerateAuthorNickname implements Serializable {
-    @Inject
-    NicknameGenerator nicknameGenerator;
+    @Inject @SimpleGenerator
+    NicknameGeneratorInterface nicknameGenerator;
 
     private Future<String> nicknameGenerationTask = null;
 

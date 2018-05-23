@@ -23,7 +23,7 @@ public class AuthorsController {
 
     @Path("/")
     @POST
-    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response getById(Author newAuthor) {
         try {
             authors.createNewAuthor(newAuthor);
